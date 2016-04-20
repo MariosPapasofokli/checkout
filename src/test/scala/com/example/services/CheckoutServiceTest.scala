@@ -1,8 +1,10 @@
 package com.example.services
 
 import com.example.models._
+import com.example.services.checkout.CheckoutServiceImpl
+import org.specs2.mutable.Specification
 
-class CheckoutServiceTest extends org.specs2.mutable.Specification {
+class CheckoutServiceTest extends Specification {
 
   val input0 = Seq.empty
   val input1 = List("apple", "APPLE", "orange", "orAnge", "orange")

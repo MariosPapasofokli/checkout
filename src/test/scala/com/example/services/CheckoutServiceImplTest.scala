@@ -1,13 +1,11 @@
 package com.example.services
 
 import com.example.models._
+import com.example.services.checkout.CheckoutServiceImpl
+import com.example.util.CartUtil._
+import org.specs2.mutable.Specification
 
-class CheckoutServiceImplTest extends org.specs2.mutable.Specification {
-
-  val cart0 = Seq.empty
-  val cart1 = List(Apple, Apple, Apple, Orange, Orange, Orange, Orange, Orange)
-  val cart2 = List(Apple, Apple, Apple)
-  val cart3 = List(Orange, Orange, Orange, Orange, Orange)
+class CheckoutServiceImplTest extends Specification {
 
   val checkoutService = new CheckoutServiceImpl
 
@@ -28,6 +26,11 @@ class CheckoutServiceImplTest extends org.specs2.mutable.Specification {
     "calculate cost for a cart with only oranges" >> {
       checkoutService.calculateTotal(cart3) must_== Orange.cost * 5
     }
+
+    "calculate cost for a mixed cart with many products" >> {
+      checkoutService.calculateTotal(cart4) must_== Apple.cost * 5 + Orange.cost * 7
+    }
+
 
   }
 
