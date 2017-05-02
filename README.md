@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/MariosPapasofokli/checkout/tree/master.svg?style=svg)](https://circleci.com/gh/MariosPapasofokli/checkout/tree/master)
+
 # Instructions
 
 #### ```sbt test``` to run the tests
